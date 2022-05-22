@@ -53,11 +53,11 @@ bash installer.sh
 # However, it can be a bit buggy. There for it's up to you weather to install it or not.
 # You can always install it afterwards by running the following command in the "Ps-22-Linux" folder:
 
-WINEPREFIX=$PWD/Ps-prefix/ sh Installation_files/setup_vkd3d_proton.sh install
+WINEPREFIX=$PWD/Ps-prefix/ sh installation_files/setup_vkd3d_proton.sh install
 
 # And to uninstall:
 
-WINEPREFIX=$PWD/Ps-prefix/ sh Installation_files/setup_vkd3d_proton.sh uninstall
+WINEPREFIX=$PWD/Ps-prefix/ sh installation_files/setup_vkd3d_proton.sh uninstall
 
 
 # To uninstall Photoshop:
