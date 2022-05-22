@@ -1,6 +1,6 @@
 # Adobe Photoshop CC 2021 installer for Linux!
 
-![image](https://user-images.githubusercontent.com/79008923/169689446-421fba54-06e8-4370-bb4e-4a415e4a680f.png)
+![image](https://github.com/YoungFellow-le/Ps-22-Linux/blob/main/Images/screenshot.png)
 
 **DISCLAIMER :**
 **Please use this software only if you have an active Photoshop subscription. I'm not responsible for any illegal use of this product.**
