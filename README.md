@@ -6,7 +6,7 @@
 **Please use this software only if you have an active Photoshop subscription. I'm not responsible for any illegal use of this product.**
 
 This repo used to be a fork of [@MiMillieuh's repo](https://github.com/MiMillieuh/Photoshop-CC2022-Linux) they have GUI installer too. (I find that a terminal script is more transparent and flexible).
-However, my changes were too significant to be a fork, so I moved it to my own repo; as I changed the hosted files and there host to my own, and completely re-wrote the scripts.  
+However, my changes were too significant to be a fork, so I moved it to my own repo; as I changed the hosted files and their host to my own, and completely re-wrote the scripts.  
 ## Requirements
 - An internet connection
 - git
