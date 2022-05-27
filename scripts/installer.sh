@@ -50,9 +50,26 @@ mkdir -p installation_files
 
 if ! [ -f installation_files/ps_components.tar.xz ]; then
   gdown 1VqIUUzCDuyxOXM-q99ySKEKU_n8DbB26 -O installation_files/ps_components.tar.xz
-fi
 else
-  echo -e "The file ps_components.tar.xz exists"
+  if md5sum -c .ps_components.md5; then
+    echo -e "The file ps_components.tar.xz is available"
+  else  
+    echo ""
+    choice="0"
+    read -p "The \"ps_components.tar.xz\" file is corrupted, would you like to remove and re-download it? (y/n): " choice
+    if [ $choice = "y" ]; then
+      rm installation_files/ps_components.tar.xz
+      echo ""
+      echo "Removed corrupted file and downloading again..."
+      echo ""
+      gdown 1VqIUUzCDuyxOXM-q99ySKEKU_n8DbB26 -O installation_files/ps_components.tar.xz
+    else
+      echo ""
+      echo "Aborting installation!"
+      echo ""
+      exit 1
+    fi
+  fi
 fi
 
 
@@ -63,8 +80,24 @@ if [ $cameraraw = "y" ]; then
   if ! [ -f installation_files/CameraRaw_12_2_1.exe ]; then
     curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
   else
-    echo -e "The file CameraRaw_12_2_1.exe exists"
+  if md5sum -c .camera_raw.md5; then
+    echo -e "The file CameraRaw_12_2_1.exe is available"
+  else  
     echo ""
+    choice="0"
+    read -p "The \"CameraRaw_12_2_1.exe\" file is corrupted, would you like to remove and re-download it? (y/n): " choice
+    if [ $choice = "y" ]; then
+      rm installation_files/CameraRaw_12_2_1.exe
+      echo ""
+      echo "Removed corrupted file and downloading again..."
+      echo ""
+      curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
+    else
+      echo ""
+      echo "Aborting installation!"
+      echo ""
+      exit 1
+    fi
   fi
 fi
 
