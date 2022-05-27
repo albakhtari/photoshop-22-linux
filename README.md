@@ -141,4 +141,4 @@ After you run the installer, open your application menu, and search for "Photosh
 
 [] - Think of the other improvements that I forgot :grin: 
 
-
+- [ ] https://github.com/octo-org/octo-repo/issues/740
