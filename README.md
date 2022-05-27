@@ -1,6 +1,6 @@
 # Adobe Photoshop CC 2021 installer for Linux!
 
-![image](https://github.com/YoungFellow-le/Ps-22-Linux/blob/main/Images/screenshot.png)
+![image](https://github.com/YoungFellow-le/Ps-22-Linux/blob/main/images/screenshot.png)
 
 ## DISCLAIMER:
 **Please use this software only if you have an active Photoshop subscription. I'm not responsible for any illegal use of this product.**
@@ -135,10 +135,10 @@ After you run the installer, open your application menu, and search for "Photosh
 
 ## To-Do:
 
-[ ] - Add a sum verification for large downloaded files (`ps_components.tar.xz` `CameraRaw_12_2_1.exe`)
+[] - Add a sum verification for large downloaded files (`ps_components.tar.xz` `CameraRaw_12_2_1.exe`)
 
-[ ] - Check wether Photoshop is installed before uninstalling (does the "_Ps-prefix_" folder exist? maybe even Adobe Photoshop folder.)
+[] - Check wether Photoshop is installed before uninstalling (does the "_Ps-prefix_" folder exist? maybe even Adobe Photoshop folder.)
 
-[ ] - Think of the other improvements that I forgot :grin: 
+[] - Think of the other improvements that I forgot :grin: 
 
 
