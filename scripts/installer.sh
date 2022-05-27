@@ -9,6 +9,19 @@ echo "- Starting Adobe Photoshop CC 2021 (v22) installer..."
 echo ""
 sleep 1
 
+if [ -d "Ps-prefix" ]; then
+  echo ""
+  choice="0"
+  read -p "A Photoshop installation seems to be present, would you like to override that installation? (y/n): " choice
+  if ! [ $choice = "y" ]; then
+    echo ""
+    echo "Aborting installation!"
+    echo ""
+    exit 1
+  fi
+  sleep 1
+fi
+
 cameraraw="0"
 echo ""
 echo "- Would you like to install Adobe Camera Raw at the end?"

@@ -137,6 +137,6 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [x] Add a sum verification for large downloaded files (`ps_components.tar.xz` `CameraRaw_12_2_1.exe`)
 
-- [ ] Check wether Photoshop is installed before uninstalling (does the "_Ps-prefix_" folder exist? maybe even Adobe Photoshop folder)
+- [x] Check wether Photoshop is installed before installing (does the "_Ps-prefix_" folder exist?)
 
 - [ ] Sort out "open with" issue
