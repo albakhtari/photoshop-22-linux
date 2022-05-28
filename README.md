@@ -139,4 +139,6 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [x] Check wether Photoshop is installed before installing (does the "_Ps-prefix_" folder exist?)
 
+- [ ] Check that components are installed in the installer
+
 - [ ] Sort out "open with" issue

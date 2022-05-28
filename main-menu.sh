@@ -1,4 +1,6 @@
 #!/bin/bash
+export WINEPREFIX="$PWD/Ps-prefix"
+
 clear
 echo "-------------- Adobe Photoshop CC 2021 (v22)  installer main menu on Linux --------------"
 echo ""
@@ -26,13 +28,13 @@ do
             read -p "Would you like to install or uninstall vkd3d proton [i=install u=uninstall]: " choice
             if [[ $choice = "i" ]]
             then
-                WINEPREFIX=Ps-prefix/ sh scripts/setup_vkd3d_proton.sh install
+                sh scripts/setup_vkd3d_proton.sh install
                 echo ""
                 echo "Vdk3d proton installed!"
                 echo ""
             elif [[ $choice = "u" ]]
             then
-                WINEPREFIX=Ps-prefix/ sh scripts/setup_vkd3d_proton.sh uninstall
+                sh scripts/setup_vkd3d_proton.sh uninstall
                 echo ""
                 echo "Vdk3d proton uninstalled!"
                 echo ""           
@@ -44,7 +46,7 @@ do
 			echo ""
             echo "Starting winecfg..."
             echo ""
-            WINEPREFIX=Ps-prefix/ winecfg
+            winecfg
 			sleep 1
 			;;
 		"Update desktop inegration")
