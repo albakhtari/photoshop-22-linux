@@ -53,10 +53,11 @@ do
             rm -f ~/.local/share/applications/photoshop.desktop
             echo "[Desktop Entry]
 Name=Photoshop CC
-Exec=bash -c \'cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\" && WINEPREFIX=\"$prefix\" wine photoshop.exe\'
-Type=Application\nComment=Photoshop CC 2021
+Exec=bash -c '$PWD/scripts/launcher.sh'
+Type=Application
+Comment=Photoshop CC 2021
 Categories=Graphics;2DGraphics;RasterGraphics;Production;
-Icon=$PWD/Images/photoshop.svg
+Icon=$PWD/images/photoshop.svg
 StartupWMClass=photoshop.exe
 MimeType=image/png;image/psd;" >> ~/.local/share/applications/photoshop.desktop
             chmod +x ~/.local/share/applications/photoshop.desktop

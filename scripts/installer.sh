@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd ..
-
 export WINEPREFIX=$PWD/Ps-prefix/
 
 echo ""
@@ -10,7 +8,6 @@ echo ""
 sleep 1
 
 if [ -d "Ps-prefix" ]; then
-  echo ""
   choice="0"
   read -p "A Photoshop installation seems to be present, would you like to override that installation? (y/n): " choice
   if ! [ $choice = "y" ]; then
@@ -24,22 +21,19 @@ fi
 
 cameraraw="0"
 echo ""
-echo "- Would you like to install Adobe Camera Raw at the end?"
-read -p "[y/n]: " cameraraw
+read -p "- Would you like to install Adobe Camera Raw at the end? (y/n): " cameraraw
 sleep 1
 
 vdk3d="0"
 echo ""
-echo "- Would you like to install vdk3d proton?"
-read -p "[y/n]: " vdk3d
+read -p "- Would you like to install vdk3d proton? (y/n): " vdk3d
 sleep 1
 
 echo ""
 echo "- Making PS prefix..."
-echo ""
 sleep 1
 rm -rf $PWD/Ps-prefix
-mkdir $PWD/Ps-prefix/
+mkdir $PWD/Ps-prefix
 sleep 1
 
 mkdir -p scripts
@@ -49,9 +43,8 @@ echo "- Downloading winetricks and making executable if not already so..."
 echo ""
 sleep 1
 wget -nc --directory-prefix=scripts/ https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-if ! [ -f scripts/winetricks ]; then
-  chmod +x scripts/winetricks
-fi
+chmod +x scripts/winetricks
+
 sleep 1
 
 
@@ -64,7 +57,7 @@ mkdir -p installation_files
 if ! [ -f installation_files/ps_components.tar.xz ]; then
   gdown 1VqIUUzCDuyxOXM-q99ySKEKU_n8DbB26 -O installation_files/ps_components.tar.xz
 else
-  if md5sum -c .ps_components.md5; then
+  if md5sum --status -c .ps_components.md5; then
     echo -e "The file ps_components.tar.xz is available"
   else  
     echo ""
@@ -92,8 +85,7 @@ if [ $cameraraw = "y" ]; then
   echo ""
   if ! [ -f installation_files/CameraRaw_12_2_1.exe ]; then
     curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
-  else
-  if md5sum -c .camera_raw.md5; then
+  elif md5sum --status -c .camera_raw.md5; then
     echo -e "The file CameraRaw_12_2_1.exe is available"
   else  
     echo ""
@@ -120,7 +112,7 @@ echo ""
 echo "- Extracting files..."
 echo ""
 sleep 1
-rm -fr installation_files/redist installation_files/x64 installation_files/x86
+rm -fr installation_files/Adobe\ Photoshop\ 2021 installation_files/redist installation_files/x64 installation_files/x86
 tar -xvf installation_files/ps_components.tar.xz -C installation_files/
 sleep 1
 
@@ -136,14 +128,14 @@ echo ""
 echo "- Setting win version to win10"
 echo ""
 sleep 1
-./installation_files/winetricks win10
+./scripts/winetricks win10
 sleep 1
 
 echo ""
 echo "- Installing & configuring winetricks components..."
 echo ""
 
-./installation_files/winetricks fontsmooth=rgb gdiplus msxml3 msxml6 atmlib corefonts dxvk
+./scripts/winetricks fontsmooth=rgb gdiplus msxml3 msxml6 atmlib corefonts dxvk
 sleep 1
 
 echo ""
@@ -195,15 +187,16 @@ rm -f scripts/launcher.sh
 rm -f scripts/photoshop.desktop
 
 echo "#!/bin/bash
-cd \"/home/myms/Software/01 ADOBE/Linux-PhotoshopCC-v22/PS-Prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
+cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
 WINEPREFIX=\"$prefix\"
 wine photoshop.exe $1" >> scripts/launcher.sh
 
 
 echo "[Desktop Entry]
 Name=Photoshop CC
-Exec=bash -c \'$PWD/scripts/launcher.sh\'
-Type=Application\nComment=Photoshop CC 2021
+Exec=bash -c '$PWD/scripts/launcher.sh'
+Type=Application
+Comment=Photoshop CC 2021
 Categories=Graphics;2DGraphics;RasterGraphics;Production;
 Icon=$PWD/images/photoshop.svg
 StartupWMClass=photoshop.exe
@@ -229,4 +222,4 @@ fi
 echo ""
 echo "- Adobe Photoshop CC 2021 (v22) has been Installed!"
 echo ""
-echo -e "Use this command to run Photoshop if the launcher and desktop files don't work, then make your own desktop entry:\n\nbash -c \'$PWD/scripts/launcher.sh\'"
+echo -e "Use this command to run Photoshop if the launcher and desktop files don't work, then make your own desktop entry:\n\nbash -c '$PWD/scripts/launcher.sh'"
