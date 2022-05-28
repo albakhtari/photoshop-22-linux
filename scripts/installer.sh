@@ -222,4 +222,4 @@ fi
 echo ""
 echo "- Adobe Photoshop CC 2021 (v22) has been Installed!"
 echo ""
-echo -e "Use this command to run Photoshop if the launcher and desktop files don't work, then make your own desktop entry:\n\nbash -c '$PWD/scripts/launcher.sh'"
+echo -e "Use this command to run Photoshop from the terminal:\n\nbash -c '$PWD/scripts/launcher.sh'"
