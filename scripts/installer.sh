@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export WINEPREFIX=$PWD/Ps-prefix/
+export WINEPREFIX="$PWD/Ps-prefix"
 
 echo ""
 echo "- Starting Adobe Photoshop CC 2021 (v22) installer..."
@@ -181,15 +181,12 @@ echo "- Copying launcher files..."
 echo ""
 
 sleep 1
-prefix=$PWD/Ps-prefix
-pwd=$PWD
 rm -f scripts/launcher.sh
 rm -f scripts/photoshop.desktop
 
-echo "#!/bin/bash
+echo "#\!/bin/bash
 cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
-WINEPREFIX=\"$prefix\"
-wine photoshop.exe $1" >> scripts/launcher.sh
+WINEPREFIX=\"$PWD/Ps-prefix\" wine photoshop.exe $1" >> scripts/launcher.sh
 
 
 echo "[Desktop Entry]

@@ -6,7 +6,7 @@ read -p "Are you sure you want to uninstall Adobe Photoshop? (y/n): " choice
 
 if [ "$choice" = "y" ]
 then
-    rm -rf ../Ps-prefix
+    rm -rf Ps-prefix
     rm -rf  ~/.local/share/applications/photoshop.desktop
     echo ""
     echo "Photoshop uninstalled!"
