@@ -5,24 +5,22 @@
 ## DISCLAIMER:
 **Please use this software only if you have an active Photoshop subscription. I'm not responsible for any illegal use of this product.**
 
-This repo used to be a fork of [@MiMillieuh's repo](https://github.com/MiMillieuh/Photoshop-CC2022-Linux) they have GUI installer too. (I find that a terminal script is more transparent and flexible).
-However, my changes were too significant to be a fork, so I moved it to my own repo; as I changed the hosted files and their host to my own, and completely re-wrote the scripts.  
 ## Requirements
 - An internet connection
-- git
-- wine >=6.1 (Avoid 6.20 to 6.22)
-- gdown - required to download the Photoshop components (To install: `pip install gdown`)
-- appmenu-gtk-module
-- tar
-- wget
-- curl
-- All **read** and **write** rights on your home folder and the installer folder
-- Vulkan capable GPU or APU (optional)
+- All **read** and **write** rights on your home folder and the folder of installation
+- `git`
+- `wine` >=6.1 (Avoid 6.20 to 6.22)
+- `gdown` - required to download the Photoshop components (To install: `pip install gdown`)
+- `tar`
+- `wget`
+- `curl`
+- Vulkan capable GPU or APU _(optional)_
+- `appmenu-gtk-module` _(optional)_
 
 
-## How to install:
+## Installation guide:
 
->_**NOTE:** The total download size, is about 1.6GB_
+>_**NOTE:** The total download size, is around 1.6GB_
 
 >_**NOTE 2:** CLONE THIS REPO TO THE FOLDER YOU WANT TO KEEP PHOTOSHOP IN, EVERYTHING TO DO WITH THE PHTOTOSHOP INSTALLATION WILL HAPPEN THERE_
 
@@ -142,3 +140,8 @@ After you run the installer, open your application menu, and search for "Photosh
 - [ ] Check that components are installed in the installer
 
 - [ ] Sort out "open with" issue
+
+## CREDITS
+
++ All credit goes to [MiMillieuh](https://github.com/MiMillieuh) for finding the components that make Photoshop run using `wine`.
++ I only take credit for creating the installer itself, not for any testing or experimenting.
