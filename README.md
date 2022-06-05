@@ -1,6 +1,6 @@
 # Adobe Photoshop CC 2021 installer for Linux!
 
-![image](https://github.com/YoungFellow-le/Ps-22-Linux/blob/main/images/screenshot.png)
+![image](https://github.com/YoungFellow-le/photoshop-22-linux/blob/main/images/screenshot.png)
 
 ## DISCLAIMER:
 **Please use this software only if you have an active Photoshop subscription. I'm not responsible for any illegal use of this product.**
@@ -31,8 +31,8 @@ Open your terminal and:
 ```bash
 # Clone the repo
 
-git clone https://github.com/YoungFellow-le/Ps-22-Linux.git
-cd Ps-22-Linux
+git clone https://github.com/YoungFellow-le/photoshop-22-linux.git
+cd photoshop-22-linux
 
 # Run the main-menu file:
 
@@ -110,7 +110,7 @@ Photoshop uninstalled!"
   ```bash
   # Navigate to the Photoshop clone folder and start the main menu e.g.
   
-  cd ~/Documents/Ps-22-Linux
+  cd ~/Documents/photoshop-22-linux
   ./main-menu.sh
   
   # And select option 5
