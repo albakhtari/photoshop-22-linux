@@ -10,6 +10,11 @@ assignees: ''
 **Describe the bug**
 <!-- A clear and concise description of what the bug is.  -->
 
+**Installer logs:**
+```
+Add your logs here
+```
+
 **To Reproduce**
 <!--Steps to reproduce the behavior:-->
 1. Go to '...'
@@ -24,9 +29,9 @@ assignees: ''
 <!--If applicable, add screenshots to help explain your problem.-->
 
 **System info (please complete the following information):**
- - Linux distro<!--[e.g Manjaro]-->: 
- - Desktop environment<!--[e.g gnome]-->:
- - Wine version<!--[e.g. 7.7-stable, 6.7-stagging]-->:
+ - Linux distro: 
+ - Desktop environment:
+ - Wine version:
 
 **Additional context**
 <!--Add any other context about the problem here.-->
