@@ -7,18 +7,18 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+### A clear description of the bug:
 <!-- A clear and concise description of what the bug is.  -->
 
-**Installer logs:**
+### The output from the installer:
 ```
 Add your logs here
 ```
 
-**Screenshots**
+### Screenshots:
 <!--If applicable, add screenshots to help explain your problem.-->
 
-**System info:**
- - Linux distro: 
- - Desktop environment:
- - Wine version:
+### System info:
+ - **Linux distrobution:**
+ - **Desktop environment:**
+ - **Wine version:**
