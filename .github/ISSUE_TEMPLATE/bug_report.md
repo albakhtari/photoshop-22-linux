@@ -18,7 +18,7 @@ Add your logs here
 **Screenshots**
 <!--If applicable, add screenshots to help explain your problem.-->
 
-**System info (please complete the following information):**
+**System info:**
  - Linux distro: 
  - Desktop environment:
  - Wine version:
