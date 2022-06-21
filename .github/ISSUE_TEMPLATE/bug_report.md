@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug or an issue you are having
 title: ''
 labels: bug
 assignees: ''
@@ -15,16 +15,6 @@ assignees: ''
 Add your logs here
 ```
 
-**To Reproduce**
-<!--Steps to reproduce the behavior:-->
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-<!-- A clear and concise description of what you expected to happen.-->
-
 **Screenshots**
 <!--If applicable, add screenshots to help explain your problem.-->
 
@@ -32,6 +22,3 @@ Add your logs here
  - Linux distro: 
  - Desktop environment:
  - Wine version:
-
-**Additional context**
-<!--Add any other context about the problem here.-->
