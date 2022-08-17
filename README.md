@@ -139,7 +139,7 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [ ] Check that components are installed in the installer
 
-- [ ] Sort out "open with" issue
+- [ ] Sort out the "open with" issue
 
 ## CREDITS
 
