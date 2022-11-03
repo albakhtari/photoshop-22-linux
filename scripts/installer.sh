@@ -1,5 +1,9 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
 export WINEPREFIX="$PWD/Ps-prefix"
 
 echo ""
@@ -17,6 +21,45 @@ if [ -d "Ps-prefix" ]; then
     exit 1
   fi
   sleep 1
+fi
+
+
+echo -e "- Checking for dependencies...\n"
+sleep 0.5
+
+if command -v curl &> /dev/null; then
+  echo -e "- '${RED}curl${NC}' is MISSING."
+  MISSING=1
+  sleep 0.5
+fi
+
+if command -v wine &> /dev/null; then
+  echo -e "- '${RED}wine${NC}' is MISSING."
+  MISSING=1
+  sleep 0.5
+fi
+
+if command -v tar &> /dev/null; then
+  echo -e "- '${RED}tar${NC}' is MISSING."
+  MISSING=1
+  sleep 0.5
+fi
+
+if command -v wget &> /dev/null; then
+  echo -e "- '${RED}wget${NC}' is MISSING."
+  MISSING=1
+  sleep 0.5
+fi
+
+if command -v gdown &> /dev/null; then
+  echo -e "- '${RED}gdown${NC}' is MISSING (To install: \"${YELLOW}pip3 install gdown${NC}\")"
+  MISSING=1
+  sleep 0.5
+fi
+
+if [[ $MISSING == "1" ]]; then
+  echo -e "\n${RED}- ERROR:${NC} Please install the missing dependencies and then reattempt the isntallation"
+  exit 1
 fi
 
 cameraraw="0"
