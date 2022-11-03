@@ -28,31 +28,31 @@ echo -e "- Checking for dependencies...\n"
 sleep 0.5
 
 if command -v curl &> /dev/null; then
-  echo -e "- '${RED}curl${NC}' is MISSING."
+  echo -e "- '${RED}curl${NC}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if command -v wine &> /dev/null; then
-  echo -e "- '${RED}wine${NC}' is MISSING."
+  echo -e "- '${RED}wine${NC}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if command -v tar &> /dev/null; then
-  echo -e "- '${RED}tar${NC}' is MISSING."
+  echo -e "- '${RED}tar${NC}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if command -v wget &> /dev/null; then
-  echo -e "- '${RED}wget${NC}' is MISSING."
+  echo -e "- '${RED}wget${NC}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if command -v gdown &> /dev/null; then
-  echo -e "- '${RED}gdown${NC}' is MISSING (To install: \"${YELLOW}pip3 install gdown${NC}\")"
+  echo -e "- '${RED}gdown${NC}' is MISSING! (To install: \"${YELLOW}pip3 install gdown${NC}\")"
   MISSING=1
   sleep 0.5
 fi
