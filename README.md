@@ -125,8 +125,7 @@ Photoshop uninstalled!"
 After you run the installer, open your application menu, and search for "Photoshop CC", and click on it. As simple as that!
 
 
-![image](https://user-images.githubusercontent.com/79008923/169689470-77dd0b17-b93a-4d91-819d-dabd8e9e401c.png)
-
+![image](https://github.com/YoungFellow-le/photoshop-22-linux/blob/main/images/menu.png)
 
 
 >_**NOTE:** If you do not find the desktop entry, or if it doesn't work, then run the`launcher.sh` file. This command should launch Photoshop for you, or it will at least tell you what the error is. (This command is also printed at the end of the installation)_
@@ -137,7 +136,9 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [x] Check wether Photoshop is installed before installing (does the "_Ps-prefix_" folder exist?)
 
-- [ ] Check that components are installed in the installer
+- [x] ~Check that components are installed in the installer~ Improve dependencies checking
+
+- [ ] Colour code the output
 
 - [ ] Sort out "open with" issue
 
