@@ -1,32 +1,24 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug or an issue you are having
 title: ''
 labels: bug
 assignees: ''
 
 ---
 
-**Describe the bug**
+### A clear description of the bug:
 <!-- A clear and concise description of what the bug is.  -->
 
-**To Reproduce**
-<!--Steps to reproduce the behavior:-->
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### The output from the installer:
+```
+Add your logs here
+```
 
-**Expected behavior**
-<!-- A clear and concise description of what you expected to happen.-->
-
-**Screenshots**
+### Screenshots:
 <!--If applicable, add screenshots to help explain your problem.-->
 
-**System info (please complete the following information):**
- - Linux distro<!--[e.g Manjaro]-->: 
- - Desktop environment<!--[e.g gnome]-->:
- - Wine version<!--[e.g. 7.7-stable, 6.7-stagging]-->:
-
-**Additional context**
-<!--Add any other context about the problem here.-->
+### System info:
+ - **Linux distrobution:**
+ - **Desktop environment:**
+ - **Wine version:**

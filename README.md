@@ -140,7 +140,7 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [ ] Colour code the output
 
-- [ ] Sort out "open with" issue
+- [ ] Sort out the "open with" issue
 
 ## CREDITS
 
