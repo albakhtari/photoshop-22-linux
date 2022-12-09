@@ -98,7 +98,7 @@ sleep 1
 mkdir -p installation_files
 
 if ! [ -f installation_files/ps_components.tar.xz ]; then
-  gdown 1VqIUUzCDuyxOXM-q99ySKEKU_n8DbB26 -O installation_files/ps_components.tar.xz
+  gdown "1esUAZkejzJARub9cessbVeUCDlzzzcQG" -O installation_files/ps_components.tar.xz
 else
   if md5sum --status -c .ps_components.md5; then
     echo -e "The file ps_components.tar.xz is available"
@@ -260,6 +260,6 @@ if [ $cameraraw = "y" ]; then
 fi
 
 echo ""
-echo "- Adobe Photoshop CC 2021 (v22) has been Installed!"
+echo "- Adobe Photoshop CC 2021 (v22) Installation has been completed!"
 echo ""
 echo -e "Use this command to run Photoshop from the terminal:\n\nbash -c '$PWD/scripts/launcher.sh'"
