@@ -138,7 +138,7 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [x] ~Check that components are installed in the installer~ Improve dependencies checking
 
-- [ ] Colour code the output
+- [x] Colour code the output
 
 - [ ] Sort out the "open with" issue
 

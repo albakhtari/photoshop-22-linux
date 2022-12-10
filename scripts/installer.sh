@@ -1,13 +1,20 @@
 #!/bin/bash
 
-RED='\033[0;31m'
-YELLOW='\033[1;33m'
-NC='\033[0m'
+red=$'\e[1;31m'
+green=$'\e[1;32m'
+blue=$'\e[1;34m'
+magenta=$'\e[1;35m'
+cyan=$'\e[1;36m'
+yellow=$'\e[1;93m'
+white=$'\e[0m'
+bold=$'\e[1m'
+norm=$'\e[21m'
+reset=$'\e[0m'
 
 export WINEPREFIX="$PWD/Ps-prefix"
 
 echo ""
-echo "- Starting Adobe Photoshop CC 2021 (v22) installer..."
+echo "${bold}- Starting Adobe Photoshop CC 2021 (v22) installer...${reset}"
 echo ""
 sleep 1
 
@@ -24,41 +31,41 @@ if [ -d "Ps-prefix" ]; then
 fi
 
 
-echo -e "- Checking for dependencies...\n"
+echo -e "${bold}- Checking for dependencies...\n${reset}"
 sleep 0.5
 
 if ! command -v curl &> /dev/null; then
-  echo -e "- '${RED}curl${NC}' is MISSING!"
+  echo -e "- '${red}curl${reset}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if ! command -v wine &> /dev/null; then
-  echo -e "- '${RED}wine${NC}' is MISSING!"
+  echo -e "- '${red}wine${reset}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if ! command -v tar &> /dev/null; then
-  echo -e "- '${RED}tar${NC}' is MISSING!"
+  echo -e "- '${red}tar${reset}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if ! command -v wget &> /dev/null; then
-  echo -e "- '${RED}wget${NC}' is MISSING!"
+  echo -e "- '${red}wget${reset}' is MISSING!"
   MISSING=1
   sleep 0.5
 fi
 
 if ! command -v gdown &> /dev/null; then
-  echo -e "- '${RED}gdown${NC}' is MISSING! (To install: \"${YELLOW}pip3 install gdown${NC}\")"
+  echo -e "- '${red}gdown${reset}' is MISSING! (To install: \"${yellow}pip3 install gdown${reset}\")"
   MISSING=1
   sleep 0.5
 fi
 
 if [[ $MISSING == "1" ]]; then
-  echo -e "\n${RED}- ERROR:${NC} Please install the missing dependencies and then reattempt the isntallation"
+  echo -e "\n${red}- ERROR:${reset} Please install the missing dependencies and then reattempt the isntallation"
   exit 1
 fi
 
@@ -73,7 +80,7 @@ read -p "- Would you like to install vdk3d proton? (y/n): " vdk3d
 sleep 1
 
 echo ""
-echo "- Making PS prefix..."
+echo "${bold}- Making PS prefix...${reset}"
 sleep 1
 rm -rf $PWD/Ps-prefix
 mkdir $PWD/Ps-prefix
@@ -82,7 +89,7 @@ sleep 1
 mkdir -p scripts
 
 echo ""
-echo "- Downloading winetricks and making executable if not already so..."
+echo "${bold}- Downloading winetricks and making executable if not already so...${reset}"
 echo ""
 sleep 1
 wget -nc --directory-prefix=scripts/ https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
@@ -92,7 +99,7 @@ sleep 1
 
 
 echo ""
-echo "- Downloading Photoshop files and compnents if not already downloaded..."
+echo "${bold}- Downloading Photoshop files and compnents if not already downloaded...${reset}"
 echo ""
 sleep 1
 mkdir -p installation_files
@@ -124,7 +131,7 @@ fi
 
 if [ $cameraraw = "y" ]; then
   echo ""
-  echo "- Downloading Camera Raw installer if not already downloaded..."
+  echo "${bold}- Downloading Camera Raw installer if not already downloaded...${reset}"
   echo ""
   if ! [ -f installation_files/CameraRaw_12_2_1.exe ]; then
     curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
@@ -152,7 +159,7 @@ fi
 sleep 1
 
 echo ""
-echo "- Extracting files..."
+echo "${bold}- Extracting files...${reset}"
 echo ""
 sleep 1
 rm -fr installation_files/Adobe\ Photoshop\ 2021 installation_files/redist installation_files/x64 installation_files/x86
@@ -161,28 +168,28 @@ sleep 1
 
 
 echo ""
-echo "- Booting & creating new prefix"
+echo "${bold}- Booting & creating new prefix${reset}"
 echo ""
 sleep 1
 wineboot
 sleep 1
 
 echo ""
-echo "- Setting win version to win10"
+echo "${bold}- Setting win version to win10${reset}"
 echo ""
 sleep 1
 ./scripts/winetricks win10
 sleep 1
 
 echo ""
-echo "- Installing & configuring winetricks components..."
+echo "${bold}- Installing & configuring winetricks components...${reset}"
 echo ""
 
 ./scripts/winetricks fontsmooth=rgb gdiplus msxml3 msxml6 atmlib corefonts dxvk
 sleep 1
 
 echo ""
-echo "- Installing redist components..."
+echo "${bold}- Installing redist components...${reset}"
 echo ""
 
 sleep 1
@@ -201,7 +208,7 @@ sleep 1
 
 if [ $vdk3d = "y" ]; then
   echo ""
-  echo "- Installing vdk3d proton..."
+  echo "${bold}- Installing vdk3d proton...${reset}"
   echo ""
   sleep 1
   sh scripts/setup_vkd3d_proton.sh install
@@ -209,7 +216,7 @@ if [ $vdk3d = "y" ]; then
 fi
 
 echo ""
-echo "- Making PS directory and copying files..."
+echo "${bold}- Making PS directory and copying files...${reset}"
 echo ""
 
 sleep 1
@@ -220,7 +227,7 @@ mv installation_files/Adobe\ Photoshop\ 2021 $PWD/Ps-prefix/drive_c/Program\ Fil
 sleep 1
 
 echo ""
-echo "- Copying launcher files..."
+echo "${bold}- Copying launcher files...${reset}"
 echo ""
 
 sleep 1
@@ -229,7 +236,7 @@ rm -f scripts/photoshop.desktop
 
 echo "#\!/bin/bash
 cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
-WINEPREFIX=\"$PWD/Ps-prefix\" wine photoshop.exe $1" >> scripts/launcher.sh
+WINEPREFIX=\"$PWD/Ps-prefix\" wine photoshop.exe $1" > scripts/launcher.sh
 
 
 echo "[Desktop Entry]
@@ -240,10 +247,10 @@ Comment=Photoshop CC 2021
 Categories=Graphics;2DGraphics;RasterGraphics;Production;
 Icon=$PWD/images/photoshop.svg
 StartupWMClass=photoshop.exe
-MimeType=image/png;image/psd;" >> scripts/photoshop.desktop
+MimeType=image/png;image/psd;" > scripts/photoshop.desktop
 
-chmod +x scripts/launcher.sh
-chmod +x scripts/photoshop.desktop
+chmod u+x scripts/launcher.sh
+chmod u+x scripts/photoshop.desktop
 
 rm -f ~/.local/share/applications/photoshop.desktop
 mv scripts/photoshop.desktop ~/.local/share/applications/photoshop.desktop
@@ -252,7 +259,7 @@ sleep 1
 
 if [ $cameraraw = "y" ]; then
   echo ""
-  echo "- Installing Adobe Camera Raw, please follow the instructions on the installer window..."
+  echo "${bold}- Installing Adobe Camera Raw, please follow the instructions on the installer window...${reset}"
   echo ""
   sleep 1
   wine installation_files/CameraRaw_12_2_1.exe
@@ -260,6 +267,6 @@ if [ $cameraraw = "y" ]; then
 fi
 
 echo ""
-echo "- Adobe Photoshop CC 2021 (v22) Installation has been completed!"
+echo "${bold}- Adobe Photoshop CC 2021 (v22) Installation has been completed!${reset}"
 echo ""
-echo -e "Use this command to run Photoshop from the terminal:\n\nbash -c '$PWD/scripts/launcher.sh'"
+echo -e "Use this command to run Photoshop from the terminal:\n\n${yellow}bash -c '$PWD/scripts/launcher.sh'${reset}"
