@@ -1,8 +1,20 @@
 #!/bin/bash
 export WINEPREFIX="$PWD/Ps-prefix"
 
+red=$'\e[1;31m'
+green=$'\e[1;32m'
+blue=$'\e[1;34m'
+magenta=$'\e[1;35m'
+cyan=$'\e[1;36m'
+yellow=$'\e[1;93m'
+white=$'\e[0m'
+bold=$'\e[1m'
+norm=$'\e[21m'
+reset=$'\e[0m'
+
+
 clear
-echo "-------------- Adobe Photoshop CC 2021 (v22)  installer main menu on Linux --------------"
+echo "${bold}-------------- Adobe Photoshop CC 2021 (v22)  installer main menu on Linux --------------${reset}"
 echo ""
 PS3="
 [Choose options 1-6 or 7 to exit]: "
@@ -12,15 +24,15 @@ do
     case $opt in
         "Install Photoshop CC 2021 (v22)")
 			echo ""
-            bash scripts/installer.sh
+            bash scripts/installer.sh | tee logs/installer.log
             ;;
         "Uninstall Photoshop CC 2021 (v22)")
             echo ""
-			bash scripts/uninstaller.sh
+			bash scripts/uninstaller.sh | tee logs/uninstaller.log
             ;;
         "Install Adobe Camera Raw Plugin")
             echo ""
-			bash scripts/camera_raw.sh
+			bash scripts/camera_raw.sh | tee logs/camera_raw.log
             ;;
         "Install/Uninstall vdk3d proton")
             choice="u"
@@ -37,7 +49,7 @@ do
                 sh scripts/setup_vkd3d_proton.sh uninstall
                 echo ""
                 echo "Vdk3d proton uninstalled!"
-                echo ""           
+                echo ""
             else
                 echo "Invalid choice: $choice"
             fi
@@ -46,11 +58,10 @@ do
 			echo ""
             echo "Starting winecfg..."
             echo ""
-            winecfg
+            winecfg | tee logs/winecfg.log
 			sleep 1
 			;;
 		"Update desktop inegration")
-            rm -f ~/.local/share/applications/photoshop.desktop
             echo "[Desktop Entry]
 Name=Photoshop CC
 Exec=bash -c '$PWD/scripts/launcher.sh'
@@ -59,8 +70,14 @@ Comment=Photoshop CC 2021
 Categories=Graphics;2DGraphics;RasterGraphics;Production;
 Icon=$PWD/images/photoshop.svg
 StartupWMClass=photoshop.exe
-MimeType=image/png;image/psd;" >> ~/.local/share/applications/photoshop.desktop
-            chmod +x ~/.local/share/applications/photoshop.desktop
+MimeType=image/png;image/psd;" > ~/.local/share/applications/photoshop.desktop
+
+            echo "echo "#\!/bin/bash
+cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
+WINEPREFIX=\"$PWD/Ps-prefix\" wine photoshop.exe $1" > scripts/launcher.sh
+
+            chmod u+x scripts/launcher.sh
+            chmod u+x ~/.local/share/applications/photoshop.desktop
 			echo ""
             echo "Desktop entry updated!"
             echo ""
