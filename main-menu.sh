@@ -12,6 +12,7 @@ bold=$'\e[1m'
 norm=$'\e[21m'
 reset=$'\e[0m'
 
+! [ -d logs ] && mkdir logs
 
 clear
 echo "${bold}-------------- Adobe Photoshop CC 2021 (v22)  installer main menu on Linux --------------${reset}"
@@ -72,7 +73,7 @@ Icon=$PWD/images/photoshop.svg
 StartupWMClass=photoshop.exe
 MimeType=image/png;image/psd;" > ~/.local/share/applications/photoshop.desktop
 
-            echo "echo "#\!/bin/bash
+            echo "#\!/bin/bash
 cd \"$PWD/Ps-prefix/drive_c/Program Files/Adobe/Adobe Photoshop 2021/\"
 WINEPREFIX=\"$PWD/Ps-prefix\" wine photoshop.exe $1" > scripts/launcher.sh
 
