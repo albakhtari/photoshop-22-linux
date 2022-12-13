@@ -1,19 +1,32 @@
-#!bin/bash
+#!/bin/bash
 
 cd ..
 export WINEPREFIX="$PWD/Ps-prefix/"
 
 sleep 1
 echo ""
-echo "- Starting Adobe Camera Raw installer..."
-sleep 1
-
+echo "- Downloading Camera Raw installer if not already downloaded..."
 echo ""
-echo "- Downloading Camera Raw installer if not already downloaded...\n"
 if ! [ -f installation_files/CameraRaw_12_2_1.exe ]; then
-  curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > Installers/CameraRaw_12_2_1.exe
-else
-  echo -e "The file CameraRaw_12_2_1.exe exists\n"
+  curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
+elif md5sum --status -c .camera_raw.md5; then
+  echo -e "The file CameraRaw_12_2_1.exe is available"
+else  
+  echo ""
+  choice="0"
+  read -p "The \"CameraRaw_12_2_1.exe\" file is corrupted, would you like to remove and re-download it? (y/n): " choice
+  if [ "$choice" = "y" ]; then
+    rm installation_files/CameraRaw_12_2_1.exe
+    echo ""
+    echo "Removed corrupted file and downloading again..."
+    echo ""
+    curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
+  else
+    echo ""
+    echo "Aborting installation!"
+    echo ""
+    exit 1
+  fi
 fi
 
 echo ""
