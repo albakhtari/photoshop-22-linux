@@ -118,7 +118,7 @@ else
       echo ""
       echo "Removed corrupted file and downloading again..."
       echo ""
-      gdown 1VqIUUzCDuyxOXM-q99ySKEKU_n8DbB26 -O installation_files/ps_components.tar.xz
+      gdown "1esUAZkejzJARub9cessbVeUCDlzzzcQG" -O installation_files/ps_components.tar.xz
     else
       echo ""
       echo "Aborting installation!"
