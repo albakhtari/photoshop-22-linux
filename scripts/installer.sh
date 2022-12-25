@@ -211,7 +211,7 @@ if [ $vdk3d = "y" ]; then
   echo "${bold}- Installing vdk3d proton...${reset}"
   echo ""
   sleep 1
-  sh scripts/setup_vkd3d_proton.sh install
+  ./scripts/setup_vkd3d_proton.sh install
   sleep 1
 fi
 

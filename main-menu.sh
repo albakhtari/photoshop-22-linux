@@ -41,13 +41,13 @@ do
             read -p "Would you like to install or uninstall vkd3d proton [i=install u=uninstall]: " choice
             if [[ $choice = "i" ]]
             then
-                sh scripts/setup_vkd3d_proton.sh install
+                ./scripts/setup_vkd3d_proton.sh install
                 echo ""
                 echo "Vdk3d proton installed!"
                 echo ""
             elif [[ $choice = "u" ]]
             then
-                sh scripts/setup_vkd3d_proton.sh uninstall
+                ./scripts/setup_vkd3d_proton.sh uninstall
                 echo ""
                 echo "Vdk3d proton uninstalled!"
                 echo ""
