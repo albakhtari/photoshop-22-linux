@@ -1,6 +1,8 @@
 #!/bin/bash
 export WINEPREFIX="$PWD/Ps-prefix"
 
+bold=$'\e[1m'
+reset=$'\e[0m'
 red=$'\e[1;31m'
 green=$'\e[1;32m'
 blue=$'\e[1;34m'
@@ -8,9 +10,7 @@ magenta=$'\e[1;35m'
 cyan=$'\e[1;36m'
 yellow=$'\e[1;93m'
 white=$'\e[0m'
-bold=$'\e[1m'
 norm=$'\e[21m'
-reset=$'\e[0m'
 
 ! [ -d logs ] && mkdir logs
 
@@ -19,7 +19,7 @@ echo "${bold}-------------- Adobe Photoshop CC 2021 (v22)  installer main menu o
 echo ""
 PS3="
 [Choose options 1-6 or 7 to exit]: "
-options=("Install Photoshop CC 2021 (v22)" "Uninstall Photoshop CC 2021 (v22)" "Install Adobe Camera Raw Plugin" "Install/Uninstall vdk3d proton" "Configure Photoshop wine prefix (winecfg)"  "Update desktop inegration" "Exit")
+options=("Install Photoshop CC 2021 (v22)" "Uninstall Photoshop CC 2021 (v22)" "Install Adobe Camera Raw Plugin" "Install/Uninstall vdk3d proton" "Configure Photoshop wine prefix (winecfg)"  "Update desktop integration" "Exit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -62,7 +62,7 @@ do
             winecfg | tee logs/winecfg.log
 			sleep 1
 			;;
-		"Update desktop inegration")
+		"Update desktop integration")
             echo "[Desktop Entry]
 Name=Photoshop CC
 Exec=bash -c '$PWD/scripts/launcher.sh'

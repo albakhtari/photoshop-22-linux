@@ -1,12 +1,15 @@
 #!/bin/bash
 
+print_important() {
+  echo -e "\n    ${yellow}[+]${reset} ${bold}$1${reset} \n"
+}
+
 cd ..
 export WINEPREFIX="$PWD/Ps-prefix/"
 
 sleep 1
-echo ""
-echo "- Downloading Camera Raw installer if not already downloaded..."
-echo ""
+print_important "- Downloading Camera Raw installer if not already downloaded..."
+
 if ! [ -f installation_files/CameraRaw_12_2_1.exe ]; then
   curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > installation_files/CameraRaw_12_2_1.exe
 elif md5sum --status -c .camera_raw.md5; then
@@ -29,13 +32,11 @@ else
   fi
 fi
 
-echo ""
-echo "- Installing Adobe Camera Raw, please follow the instructions on the installer window...\n"
+print_important "Installing Adobe Camera Raw, please follow the instructions on the installer window...\n"
 
 sleep 1
 wine installation_files/CameraRaw_12_2_1.exe
 sleep 1
 
-echo ""
-echo "Adobe Camera Raw installed!"
-echo ""
+
+print_important "Adobe Camera Raw installed!"

@@ -136,13 +136,15 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [x] Check wether Photoshop is installed before installing (does the "_Ps-prefix_" folder exist?)
 
+- [X] ~Colour code the output~ Colour code the output of all scripts using a `printMessage` function
+
 - [ ] ~Check that components are installed in the installer~ Improve dependencies checking
 
-- [ ] ~Colour code the output~ Colour code the output of all scripts using a `printMessage` function
-
-- [ ] Sort out the "open with" issue
+- [ ] Sort out the "open with Photoshop" issue
 
 - [ ] Add ability to create multiple prefixes
+
+- [ ] Move all functions to a function script
 
 ## CREDITS
 
