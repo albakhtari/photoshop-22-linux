@@ -95,6 +95,26 @@ Photoshop uninstalled!"
 
 # If you want to completely remove this installer, then delete the cloned folder after running the uninstaller.
 ```
+<details closed>
+<summary>COMMON GDOWN ERROR</summary>
+
+Sometimes, this error can show up:
+```bash
+Access denied with the following error:
+
+ 	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+
+You may still be able to access the file from the browser:
+
+	 https://drive.google.com/uc?id=...
+```
+
+* **Uninstalling `gdown` by `pip uninstall gdown`, and then reinstalling with `pip install gdown` fixes this issue.**
+* If that doesn't fix the problem, there are some other potential ways to fix the issue: [[1]](https://github.com/wkentaro/gdown/issues/43#issuecomment-638232081) [[2]](https://github.com/wkentaro/gdown/issues/43#issuecomment-1278345755) [[3]](https://github.com/wkentaro/gdown/issues/43#issuecomment-1328098120)
+* Opening this link in the browser and downloading the file manually `.../photoshop-22-linux/installation_files` is also viable as a workaround. 
+</details>
+
 ## Configure Photoshop:
 <br>
 
