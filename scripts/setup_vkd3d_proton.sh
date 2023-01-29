@@ -5,7 +5,7 @@ vkd3d_lib32=${vkd3d_lib32:-"x86"}
 vkd3d_lib64=${vkd3d_lib64:-"x64"}
 
 # figure out where we are
-basedir=$(dirname "$(readlink -f "$0")")
+basedir=$(pwd)/installation_files
 
 # figure out which action to perform
 action="$1"
