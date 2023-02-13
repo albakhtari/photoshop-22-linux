@@ -1,21 +1,8 @@
 #!/bin/bash
 
-yellow=$'\e[1;93m'
-red=$'\e[1;31m'
-bold=$'\e[1m'
-reset=$'\e[0m'
-green=$'\e[1;32m'
-blue=$'\e[1;34m'
-magenta=$'\e[1;35m'
-cyan=$'\e[1;36m'
-white=$'\e[0m'
-norm=$'\e[21m'
+source "./shared.sh"
 
 export WINEPREFIX="$PWD/Ps-prefix"
-
-print_important() {
-  echo -e "\n    ${yellow}[+]${reset} ${bold}$1${reset} \n"
-}
 
 echo ""
 print_important "Starting Adobe Photoshop CC 2021 (v22) installer..."
@@ -195,7 +182,7 @@ sleep 1
 if [ $vdk3d = "y" ]; then
     print_important "Installing vdk3d proton..."
     sleep 1
-  ./scripts/setup_vkd3d_proton.sh install
+  ./scripts/winetricks vdk3d
   sleep 1
 fi
 
