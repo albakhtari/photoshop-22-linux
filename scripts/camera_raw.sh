@@ -1,10 +1,7 @@
 #!/bin/bash
 
-print_important() {
-  echo -e "\n    ${yellow}[+]${reset} ${bold}$1${reset} \n"
-}
+source "./shared.sh"
 
-cd ..
 export WINEPREFIX="$PWD/Ps-prefix/"
 
 sleep 1

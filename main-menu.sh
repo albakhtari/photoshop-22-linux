@@ -1,16 +1,8 @@
 #!/bin/bash
-export WINEPREFIX="$PWD/Ps-prefix"
 
-bold=$'\e[1m'
-reset=$'\e[0m'
-red=$'\e[1;31m'
-green=$'\e[1;32m'
-blue=$'\e[1;34m'
-magenta=$'\e[1;35m'
-cyan=$'\e[1;36m'
-yellow=$'\e[1;93m'
-white=$'\e[0m'
-norm=$'\e[21m'
+source "./scritps/shared.sh"
+
+export WINEPREFIX="$PWD/Ps-prefix"
 
 ! [ -d logs ] && mkdir logs
 

@@ -158,13 +158,14 @@ After you run the installer, open your application menu, and search for "Photosh
 
 - [X] ~Colour code the output~ Colour code the output of all scripts using a `printMessage` function
 
+- [ x ] Move all functions to a function script
+
 - [ ] ~Check that components are installed in the installer~ Improve dependencies checking
 
 - [ ] Sort out the "open with Photoshop" issue
 
 - [ ] Add ability to create multiple prefixes
 
-- [ ] Move all functions to a function script
 
 ## CREDITS
 
