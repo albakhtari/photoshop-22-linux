@@ -1,7 +1,4 @@
 # Adobe Photoshop CC 2021 installer for Linux!
-
-# [THIS REPOSITORY HAS BEEN ARCHIVED](https://github.com/YoungFellow-le/photoshop-22-linux/discussions/26)
-
 ![image](https://github.com/YoungFellow-le/photoshop-22-linux/blob/main/images/screenshot.png)
 
 ## DISCLAIMER:
